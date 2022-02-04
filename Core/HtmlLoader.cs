@@ -14,7 +14,7 @@ namespace Parser.Core
             client = new HttpClient();
             url = $"{settings.BaseUrl}/{settings.Prefix}/";
         }
-
+        //
         public async Task<string> GetSourceByPageId(int id)
         {
             var currentUrl = url.Replace("{CurrentId}", id.ToString());

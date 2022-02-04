@@ -172,12 +172,12 @@ namespace Parser
             service.HideCommandPromptWindow = true;
             var options = new ChromeOptions();
             options.AddArgument("--window-position=-32000,-32000");
-            
 
-            WebDriver driver = new ChromeDriver(service, options);
+            
+                             WebDriver driver = new ChromeDriver();
 
                
-                            WebDriver driver2 = new ChromeDriver(service, options);
+                            WebDriver driver2 = new ChromeDriver();
                            driver.Url = @"https://ru.megaindex.com/a/textanalysis";
                            driver2.Url = @"https://ru.megaindex.com/a/tcategories";
                             for (int i = 0; i < 10; i++)
@@ -212,7 +212,7 @@ namespace Parser
                             await Task.Delay(100);
                             for (int i = 0; i < arg2.Count; i++)
                             {
-
+                //
                
                     indx2 = arg2[i].IndexOf("___") + 3;
 
@@ -239,7 +239,7 @@ namespace Parser
                     driver.FindElement(By.XPath("/html/body/div[1]/div/div/main/div[2]/form/div[1]/div[1]/input[2]")).Click();
                     await Task.Delay(100);
                     list2.Add(driver.FindElement(By.XPath("/html/body/div[1]/div/div/main/div[2]/div[1]/div[2]/div/div/div[2]")).Text.ToString());
-
+            
                 }
                 else
                     list2.Add("0");
